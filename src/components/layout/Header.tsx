@@ -52,8 +52,9 @@ const Header = () => {
           <Button
             size="sm"
             className="bg-accent text-accent-foreground hover:opacity-90 transition-base"
+            asChild
           >
-            Login
+            <Link to="/auth">Login</Link>
           </Button>
         </div>
 
@@ -95,8 +96,11 @@ const Header = () => {
               </Button>
               <Button
                 className="w-full bg-accent text-accent-foreground hover:opacity-90"
+                asChild
               >
-                Login
+                <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
+                  Login
+                </Link>
               </Button>
             </div>
           </div>

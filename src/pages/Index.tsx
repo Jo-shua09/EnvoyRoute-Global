@@ -131,8 +131,8 @@ const Index = () => {
                       </select>
                     </div>
                   </div>
-                  <Button className="w-full bg-accent hover:opacity-90 text-accent-foreground">
-                    Calculate Quote
+                  <Button className="w-full bg-accent hover:opacity-90 text-accent-foreground" asChild>
+                    <Link to="/quote">Calculate Quote</Link>
                   </Button>
                 </CardContent>
               </Card>

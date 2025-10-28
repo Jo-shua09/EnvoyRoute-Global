@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -6,11 +7,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Mail, Phone, MapPin, MessageSquare, Send } from "lucide-react";
+import { Mail, Phone, MapPin, MessageSquare, Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,13 +20,20 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
     toast({
       title: "Message Sent!",
       description: "We'll get back to you within 24 hours.",
     });
+    
     setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(false);
   };
 
   const faqs = [
@@ -137,6 +146,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                         placeholder="Your full name"
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div>
@@ -147,6 +157,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                         placeholder="your.email@example.com"
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div>
@@ -156,6 +167,7 @@ const Contact = () => {
                         value={formData.subject}
                         onChange={(e) => setFormData({...formData, subject: e.target.value})}
                         placeholder="How can we help?"
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div>
@@ -166,11 +178,25 @@ const Contact = () => {
                         onChange={(e) => setFormData({...formData, message: e.target.value})}
                         placeholder="Tell us more about your inquiry..."
                         rows={5}
+                        disabled={isSubmitting}
                       />
                     </div>
-                    <Button type="submit" className="w-full bg-accent hover:opacity-90 text-accent-foreground">
-                      <Send className="h-4 w-4 mr-2" />
-                      Send Message
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-accent hover:opacity-90 text-accent-foreground"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="h-4 w-4 mr-2" />
+                          Send Message
+                        </>
+                      )}
                     </Button>
                   </form>
                 </CardContent>
@@ -212,8 +238,8 @@ const Contact = () => {
                       For partnership opportunities, bulk shipping solutions, or enterprise services, 
                       contact our business development team.
                     </p>
-                    <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-                      Contact Sales Team
+                    <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground" asChild>
+                      <Link to="/contact">Contact Sales Team</Link>
                     </Button>
                   </CardContent>
                 </Card>

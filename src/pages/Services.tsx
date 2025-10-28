@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/layout/Header";
@@ -118,8 +119,8 @@ const Services = () => {
                           </ul>
                         </div>
 
-                        <Button className="w-full bg-accent hover:opacity-90 text-accent-foreground">
-                          Get a Quote
+                        <Button className="w-full bg-accent hover:opacity-90 text-accent-foreground" asChild>
+                          <Link to="/quote">Get a Quote</Link>
                         </Button>
                       </div>
                     </CardContent>
@@ -196,8 +197,8 @@ const Services = () => {
                       <p className="text-muted-foreground mb-4">
                         Interested in our business solutions?
                       </p>
-                      <Button size="lg" className="bg-accent hover:opacity-90 text-accent-foreground">
-                        Contact Sales Team
+                      <Button size="lg" className="bg-accent hover:opacity-90 text-accent-foreground" asChild>
+                        <Link to="/contact">Contact Sales Team</Link>
                       </Button>
                     </div>
                   </div>
