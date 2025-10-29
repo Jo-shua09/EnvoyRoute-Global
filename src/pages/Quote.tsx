@@ -12,7 +12,7 @@ const Quote = () => {
   const { toast } = useToast();
   const [isCalculating, setIsCalculating] = useState(false);
   const [showResults, setShowResults] = useState(false);
-  
+
   const [quoteData, setQuoteData] = useState({
     from: "",
     to: "",
@@ -29,13 +29,13 @@ const Quote = () => {
   const handleCalculate = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsCalculating(true);
-    
+
     // Simulate calculation
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
     setShowResults(true);
     setIsCalculating(false);
-    
+
     toast({
       title: "Quote Calculated!",
       description: "Your shipping options are ready below.",
@@ -45,19 +45,15 @@ const Quote = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="py-16 gradient-hero">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <Calculator className="h-16 w-16 text-white mx-auto mb-6 animate-fade-in" />
-              <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 animate-fade-in">
-                Get an Instant Quote
-              </h1>
-              <p className="text-xl text-white/90 animate-fade-in">
-                Calculate shipping costs in seconds with our transparent pricing
-              </p>
+              <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 animate-fade-in">Get an Instant Quote</h1>
+              <p className="text-xl text-white/90 animate-fade-in">Calculate shipping costs in seconds with our transparent pricing</p>
             </div>
           </div>
         </section>
@@ -78,7 +74,7 @@ const Quote = () => {
                         <Input
                           required
                           value={quoteData.from}
-                          onChange={(e) => setQuoteData({...quoteData, from: e.target.value})}
+                          onChange={(e) => setQuoteData({ ...quoteData, from: e.target.value })}
                           placeholder="Country or City"
                           disabled={isCalculating}
                         />
@@ -88,7 +84,7 @@ const Quote = () => {
                         <Input
                           required
                           value={quoteData.to}
-                          onChange={(e) => setQuoteData({...quoteData, to: e.target.value})}
+                          onChange={(e) => setQuoteData({ ...quoteData, to: e.target.value })}
                           placeholder="Country or City"
                           disabled={isCalculating}
                         />
@@ -101,7 +97,7 @@ const Quote = () => {
                           min="0.1"
                           required
                           value={quoteData.weight}
-                          onChange={(e) => setQuoteData({...quoteData, weight: e.target.value})}
+                          onChange={(e) => setQuoteData({ ...quoteData, weight: e.target.value })}
                           placeholder="0.0"
                           disabled={isCalculating}
                         />
@@ -111,7 +107,7 @@ const Quote = () => {
                         <select
                           className="w-full h-10 px-3 rounded-md border border-input bg-background"
                           value={quoteData.serviceType}
-                          onChange={(e) => setQuoteData({...quoteData, serviceType: e.target.value})}
+                          onChange={(e) => setQuoteData({ ...quoteData, serviceType: e.target.value })}
                           disabled={isCalculating}
                         >
                           <option value="express">EnvoyRoute Express</option>
@@ -120,12 +116,8 @@ const Quote = () => {
                         </select>
                       </div>
                     </div>
-                    
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-accent hover:opacity-90 text-accent-foreground"
-                      disabled={isCalculating}
-                    >
+
+                    <Button type="submit" className="w-full bg-accent hover:opacity-90 text-accent-foreground" disabled={isCalculating}>
                       {isCalculating ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -150,10 +142,8 @@ const Quote = () => {
           <section className="py-16 animate-fade-in">
             <div className="container mx-auto px-4">
               <div className="max-w-5xl mx-auto">
-                <h2 className="text-3xl font-heading font-bold text-center mb-12">
-                  Your Shipping Options
-                </h2>
-                
+                <h2 className="text-3xl font-heading font-bold text-center mb-12">Your Shipping Options</h2>
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <Card className="shadow-medium hover:shadow-strong transition-smooth border-2 border-transparent hover:border-accent">
                     <CardContent className="p-6">
@@ -180,9 +170,7 @@ const Quote = () => {
                           Real-time tracking
                         </li>
                       </ul>
-                      <Button className="w-full bg-accent hover:opacity-90 text-accent-foreground">
-                        Book Now
-                      </Button>
+                      <Button className="w-full bg-accent hover:opacity-90 text-accent-foreground">Book Now</Button>
                     </CardContent>
                   </Card>
 
@@ -211,9 +199,7 @@ const Quote = () => {
                           Full tracking
                         </li>
                       </ul>
-                      <Button className="w-full bg-accent hover:opacity-90 text-accent-foreground">
-                        Book Now
-                      </Button>
+                      <Button className="w-full bg-accent hover:opacity-90 text-accent-foreground">Book Now</Button>
                     </CardContent>
                   </Card>
 
@@ -242,17 +228,13 @@ const Quote = () => {
                           Bulk discounts
                         </li>
                       </ul>
-                      <Button className="w-full bg-accent hover:opacity-90 text-accent-foreground">
-                        Book Now
-                      </Button>
+                      <Button className="w-full bg-accent hover:opacity-90 text-accent-foreground">Book Now</Button>
                     </CardContent>
                   </Card>
                 </div>
 
                 <div className="text-center mt-12">
-                  <p className="text-muted-foreground mb-4">
-                    Need help choosing the right service?
-                  </p>
+                  <p className="text-muted-foreground mb-4">Need help choosing the right service?</p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Button variant="outline" asChild className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
                       <Link to="/contact">Contact Support</Link>

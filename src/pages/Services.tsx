@@ -24,13 +24,7 @@ const Services = () => {
       icon: Package,
       name: "EnvoyRoute Standard",
       description: "Reliable and cost-effective shipping solution",
-      features: [
-        "3-5 business days delivery",
-        "Full tracking visibility",
-        "Secure packaging",
-        "Up to 100kg per shipment",
-        "Signature on delivery",
-      ],
+      features: ["3-5 business days delivery", "Full tracking visibility", "Secure packaging", "Up to 100kg per shipment", "Signature on delivery"],
       transitTime: "3-5 business days",
     },
     {
@@ -64,18 +58,16 @@ const Services = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="py-16 gradient-hero">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-                Services & Solutions
-              </h1>
+              <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">Services & Solutions</h1>
               <p className="text-xl text-white/90">
-                Comprehensive logistics solutions tailored to your business needs. 
-                From express delivery to specialized freight, we've got you covered.
+                Comprehensive logistics solutions tailored to your business needs. From express delivery to specialized freight, we've got you
+                covered.
               </p>
             </div>
           </div>
@@ -106,7 +98,7 @@ const Services = () => {
                           <p className="text-sm text-muted-foreground mb-1">Transit Time</p>
                           <p className="font-semibold">{service.transitTime}</p>
                         </div>
-                        
+
                         <div>
                           <p className="font-semibold mb-3">Key Features:</p>
                           <ul className="space-y-2">
@@ -137,12 +129,8 @@ const Services = () => {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <Building2 className="h-16 w-16 text-accent mx-auto mb-4" />
-                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-                  Business Solutions
-                </h2>
-                <p className="text-lg text-muted-foreground">
-                  Specialized services for SMBs and e-commerce businesses
-                </p>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Business Solutions</h2>
+                <p className="text-lg text-muted-foreground">Specialized services for SMBs and e-commerce businesses</p>
               </div>
 
               <Card className="shadow-medium">
@@ -191,12 +179,10 @@ const Services = () => {
                       </ul>
                     </div>
                   </div>
-                  
+
                   <div className="mt-8 pt-8 border-t">
                     <div className="text-center">
-                      <p className="text-muted-foreground mb-4">
-                        Interested in our business solutions?
-                      </p>
+                      <p className="text-muted-foreground mb-4">Interested in our business solutions?</p>
                       <Button size="lg" className="bg-accent hover:opacity-90 text-accent-foreground" asChild>
                         <Link to="/contact">Contact Sales Team</Link>
                       </Button>

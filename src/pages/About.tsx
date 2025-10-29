@@ -47,18 +47,14 @@ const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="py-16 gradient-hero">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-                Our Assurance to You
-              </h1>
-              <p className="text-xl text-white/90">
-                Building trust through precision, reliability, and exceptional service since 2010
-              </p>
+              <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">Our Assurance to You</h1>
+              <p className="text-xl text-white/90">Building trust through precision, reliability, and exceptional service since 2010</p>
             </div>
           </div>
         </section>
@@ -74,10 +70,9 @@ const About = () => {
                   </div>
                   <h2 className="text-3xl font-heading font-bold text-center mb-6">Our Mission</h2>
                   <p className="text-lg text-center text-muted-foreground leading-relaxed">
-                    EnvoyRoute is committed to revolutionizing global logistics through innovative technology, 
-                    unwavering reliability, and exceptional customer service. We believe every package tells a story, 
-                    and we're honored to be part of that journey—connecting businesses, families, and communities 
-                    across the globe with precision and care.
+                    EnvoyRoute is committed to revolutionizing global logistics through innovative technology, unwavering reliability, and exceptional
+                    customer service. We believe every package tells a story, and we're honored to be part of that journey—connecting businesses,
+                    families, and communities across the globe with precision and care.
                   </p>
                 </CardContent>
               </Card>
@@ -91,9 +86,7 @@ const About = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <p className="text-4xl md:text-5xl font-heading font-bold text-accent mb-2">
-                    {stat.value}
-                  </p>
+                  <p className="text-4xl md:text-5xl font-heading font-bold text-accent mb-2">{stat.value}</p>
                   <p className="text-muted-foreground">{stat.label}</p>
                 </div>
               ))}
@@ -106,9 +99,7 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Our Core Values</h2>
-              <p className="text-lg text-muted-foreground">
-                The principles that guide every decision we make
-              </p>
+              <p className="text-lg text-muted-foreground">The principles that guide every decision we make</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -136,13 +127,10 @@ const About = () => {
             <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
-                    Global Reach, Local Expertise
-                  </h2>
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Global Reach, Local Expertise</h2>
                   <p className="text-lg text-muted-foreground mb-6">
-                    Our extensive network spans 190+ countries with over 500 strategically located 
-                    distribution centers. This global infrastructure, combined with local market knowledge, 
-                    ensures your shipments are handled with expertise at every stage of their journey.
+                    Our extensive network spans 190+ countries with over 500 strategically located distribution centers. This global infrastructure,
+                    combined with local market knowledge, ensures your shipments are handled with expertise at every stage of their journey.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
@@ -169,11 +157,7 @@ const About = () => {
                   </div>
                 </div>
                 <div>
-                  <img 
-                    src={networkImage} 
-                    alt="Global logistics network" 
-                    className="rounded-lg shadow-medium w-full"
-                  />
+                  <img src={networkImage} alt="Global logistics network" className="rounded-lg shadow-medium w-full" />
                 </div>
               </div>
             </div>
@@ -186,9 +170,7 @@ const About = () => {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Our Journey</h2>
-                <p className="text-lg text-muted-foreground">
-                  Milestones that shaped EnvoyRoute
-                </p>
+                <p className="text-lg text-muted-foreground">Milestones that shaped EnvoyRoute</p>
               </div>
 
               <div className="space-y-8">
@@ -213,20 +195,20 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">What Our Clients Say</h2>
-              <p className="text-lg text-muted-foreground">
-                Trusted by businesses around the world
-              </p>
+              <p className="text-lg text-muted-foreground">Trusted by businesses around the world</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {[
                 {
-                  quote: "EnvoyRoute has been instrumental in our international expansion. Their reliability and tracking capabilities give us complete confidence.",
+                  quote:
+                    "EnvoyRoute has been instrumental in our international expansion. Their reliability and tracking capabilities give us complete confidence.",
                   author: "Sarah Chen",
                   company: "Tech Innovations Inc.",
                 },
                 {
-                  quote: "The dedicated support and flexible solutions have streamlined our entire logistics operation. Couldn't ask for a better partner.",
+                  quote:
+                    "The dedicated support and flexible solutions have streamlined our entire logistics operation. Couldn't ask for a better partner.",
                   author: "Michael Rodriguez",
                   company: "Global Retail Co.",
                 },

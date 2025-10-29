@@ -56,7 +56,7 @@ const Tracking = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <main className="flex-1 py-12 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -66,21 +66,16 @@ const Tracking = () => {
                 <CardTitle className="text-2xl font-heading">Track Your Shipment</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Enter your tracking number to see real-time updates on your shipment
-                </p>
+                <p className="text-muted-foreground mb-4">Enter your tracking number to see real-time updates on your shipment</p>
                 <div className="flex gap-2">
-                  <Input 
-                    placeholder="Enter tracking number (e.g., ENV123456789)" 
+                  <Input
+                    placeholder="Enter tracking number (e.g., ENV123456789)"
                     value={trackingNumber}
                     onChange={(e) => setTrackingNumber(e.target.value)}
-                    onKeyPress={(e) => e.key === 'Enter' && handleTrack()}
+                    onKeyPress={(e) => e.key === "Enter" && handleTrack()}
                     className="flex-1"
                   />
-                  <Button 
-                    onClick={handleTrack}
-                    className="bg-accent hover:opacity-90 text-accent-foreground"
-                  >
+                  <Button onClick={handleTrack} className="bg-accent hover:opacity-90 text-accent-foreground">
                     <Search className="h-4 w-4 mr-2" />
                     Track
                   </Button>
@@ -162,9 +157,7 @@ const Tracking = () => {
                         const Icon = event.icon;
                         return (
                           <div key={index} className="flex items-start space-x-4 relative">
-                            {index !== trackingData.events.length - 1 && (
-                              <div className="absolute left-5 top-12 bottom-0 w-0.5 bg-border" />
-                            )}
+                            {index !== trackingData.events.length - 1 && <div className="absolute left-5 top-12 bottom-0 w-0.5 bg-border" />}
                             <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center relative z-10">
                               <Icon className="h-5 w-5 text-accent" />
                             </div>
@@ -186,9 +179,7 @@ const Tracking = () => {
               <Card className="shadow-soft">
                 <CardContent className="p-12 text-center">
                   <Package className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-                  <p className="text-muted-foreground">
-                    Enter a tracking number above to view shipment details
-                  </p>
+                  <p className="text-muted-foreground">Enter a tracking number above to view shipment details</p>
                 </CardContent>
               </Card>
             )}
