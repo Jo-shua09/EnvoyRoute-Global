@@ -183,15 +183,6 @@ We welcome contributions! Please follow these steps:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 Contact
-
-For questions, support, or business inquiries:
-
-- **Email**: info@envoyroute.com
-- **Phone**: +1 (555) 123-4567
-- **Website**: [www.envoyroute.com](https://www.envoyroute.com)
-- **Twitter**: [@envoyroute](https://twitter.com/envoyroute)
-
 ## 🙏 Acknowledgments
 
 - Icons provided by [Lucide](https://lucide.dev/)
