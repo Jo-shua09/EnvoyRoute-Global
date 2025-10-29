@@ -19,7 +19,7 @@ const Index = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/70"></div>
           </div>
 
-          <div className="container mx-auto px-4 relative z-10 justify-center m-auto flex flex-col items-center text-center">
+          <div className="container mx-auto px-4 relative z-10 justify-center flex flex-col items-center text-center">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6 animate-fade-in">Precision. Speed. Assurance.</h1>
               <p className="text-xl text-white/90 mb-8 animate-fade-in">

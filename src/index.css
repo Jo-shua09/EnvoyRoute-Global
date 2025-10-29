@@ -51,12 +51,12 @@ All colors MUST be HSL.
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(220 50% 25%) 0%, hsl(220 40% 35%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(180 80% 45%) 0%, hsl(180 70% 55%) 100%);
-    
+
     /* Shadows */
     --shadow-soft: 0 2px 8px hsl(220 15% 20% / 0.08);
     --shadow-medium: 0 4px 16px hsl(220 15% 20% / 0.12);
     --shadow-strong: 0 8px 32px hsl(220 15% 20% / 0.16);
-    
+
     /* Transitions */
     --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -107,7 +107,12 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading font-bold;
   }
 }
@@ -139,5 +144,97 @@ All colors MUST be HSL.
 
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+
+  /* Responsive text utilities */
+  .text-responsive-xs {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+  .text-responsive-sm {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+  .text-responsive-base {
+    font-size: clamp(1rem, 3vw, 1.125rem);
+  }
+  .text-responsive-lg {
+    font-size: clamp(1.125rem, 3.5vw, 1.25rem);
+  }
+  .text-responsive-xl {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+  .text-responsive-2xl {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  .text-responsive-3xl {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+  .text-responsive-4xl {
+    font-size: clamp(3rem, 8vw, 4rem);
+  }
+  .text-responsive-5xl {
+    font-size: clamp(4rem, 10vw, 5rem);
+  }
+  .text-responsive-6xl {
+    font-size: clamp(5rem, 12vw, 6rem);
+  }
+
+  /* Responsive spacing utilities */
+  .space-responsive-x {
+    gap: clamp(0.5rem, 2vw, 1rem);
+  }
+  .space-responsive-y {
+    gap: clamp(1rem, 4vw, 2rem);
+  }
+  .space-responsive-section {
+    padding: clamp(2rem, 8vw, 4rem);
+  }
+
+  /* Responsive button utilities */
+  .btn-responsive-sm {
+    padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 4vw, 1.5rem);
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+  .btn-responsive-md {
+    padding: clamp(0.75rem, 3vw, 1rem) clamp(1.5rem, 6vw, 2rem);
+    font-size: clamp(1rem, 3vw, 1.125rem);
+  }
+  .btn-responsive-lg {
+    padding: clamp(1rem, 4vw, 1.25rem) clamp(2rem, 8vw, 3rem);
+    font-size: clamp(1.125rem, 3.5vw, 1.25rem);
+  }
+
+  /* Responsive container utilities */
+  .container-responsive {
+    max-width: min(100vw - 2rem, 1200px);
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+  }
+
+  /* Animation utilities for loader */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes rotate-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 8s linear infinite;
   }
 }
