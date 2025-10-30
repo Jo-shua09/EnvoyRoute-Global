@@ -21,7 +21,7 @@ const Header = () => {
       <nav className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center space-x-2 transition-base hover:opacity-80">
           <Package className="h-8 w-8 text-accent" />
-          <span className="font-heading text-xl font-bold text-primary">EnvoyRoutesss</span>
+          <span className="font-heading text-xl font-bold text-primary">EnvoyRoute</span>
         </Link>
 
         {/* Desktop Navigation */}
